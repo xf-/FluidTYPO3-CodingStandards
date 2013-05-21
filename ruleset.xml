@@ -47,7 +47,6 @@
 
 	<!-- NamingConventions -->
 	<rule ref="Generic.NamingConventions.ConstructorName" />
-	<rule ref="Generic.NamingConventions.UpperCaseConstantName" />
 
 	<!-- Objects -->
 

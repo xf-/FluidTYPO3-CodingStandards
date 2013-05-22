@@ -41,6 +41,7 @@ foreach ($commits as $commit) {
 			$trimmed = substr($body, strlen($prefix));
 			$firstCharacter = substr($trimmed, 0, 1);
 			if (MUST_USE_SPACE_AFTER_PREFIX && ' ' !== $firstCharacter) {
+				$erroneousCommitsInHistory = TRUE;
 				print "Commit message for '" . $sha1 . "' does not contain a space after the prefix (example: '[TASK] Subject header line')\n";
 			} else {
 				$firstCharacter = substr($trimmed, 1, 1);
@@ -52,6 +53,7 @@ foreach ($commits as $commit) {
 		}
 	}
 	if (FALSE === $hasRequiredPrefix) {
+		$erroneousCommitsInHistory = TRUE;
 		print "Commit message for '" . $sha1 . "' does not have a required prefix (expected: " . implode(', ', $allowedPrefixes) . ")\n";
 	}
 }

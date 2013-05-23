@@ -11,7 +11,7 @@ define('MUST_USE_SPACE_AFTER_PREFIX', TRUE);
 // checks that the subject string (starting after prefix and space) does NOT start with a lowercase alphabetic character
 define('MUST_USE_VERSAL_SUBJECT', TRUE);
 // check this many recent commits in the history
-define('HISTORY_LENGTH', 50);
+define('HISTORY_LENGTH', 25);
 
 if (TRUE === isset($argv[1])) {
 	$path = realpath($argv[1]);

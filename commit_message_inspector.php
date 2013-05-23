@@ -53,8 +53,13 @@ foreach ($commits as $commit) {
 		}
 	}
 	if (FALSE === $hasRequiredPrefix) {
+		if (TRUE === strpos("\n", $trimmed)) {
+			$firstLine = array_shift(explode("\n", $trimmed));
+		} else {
+			$firstLine = $trimmed;
+		}
 		$erroneousCommitsInHistory = TRUE;
-		print "Commit message for '" . $sha1 . "' does not have a required prefix (expected: " . implode(', ', $allowedPrefixes) . ")\n";
+		print "Commit message for '" . $sha1 . "' does not have a required prefix (expected: " . implode(', ', $allowedPrefixes) . ", actual: " . $firstLine . ")\n";
 	}
 }
 

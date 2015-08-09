@@ -55,6 +55,7 @@
 	<!-- Arrays -->
 	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 	<!--<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>-->
+	<rule ref="Generic.Arrays.DisallowShortArraySyntax"/>
 
 
 	<!-- Debug -->
